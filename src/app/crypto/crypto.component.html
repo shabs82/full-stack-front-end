@@ -1,29 +1,21 @@
-<div *ngIf="allCrypto$ | async as crypto" >
-  <div >
-    <table>
-      <tr>
-        <div class="card-header">
-         Crypto
+  <div class="container">
+    <div class="row vh-100" style="padding-top: 60px; padding-bottom: 20px">
+
+      <div class="col-5">
+        <div class="card h-100 border">
+          <div class="card-header">
+            <h4 class="headers">Crypto</h4>
+          </div>
+          <div class="card-body ">
+            <div *ngIf="allCrypto$ | async as crypto" >
+              <ul>
+                <li class="cryptoList" *ngFor= "let eachCrypto of crypto">
+                  {{eachCrypto.id}}: {{eachCrypto.name}} : {{eachCrypto.price}}: {{eachCrypto.description}}
+                </li>
+              </ul>
+          </div>
         </div>
-
-      </tr>
-      <tr *ngFor=" let eachCrypto of crypto">
-        <td>
-          {{eachCrypto.id}}
-        </td>
-        <td>
-          {{eachCrypto.name}}
-        </td>
-        <td>
-          {{eachCrypto.description}}
-        </td>
-        <td>
-          {{eachCrypto.price}}
-        </td>
-      </tr>
-
-    </table>
-
+      </div>
+      </div>
+    </div>
   </div>
-
-</div>
