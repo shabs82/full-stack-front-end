@@ -1,0 +1,29 @@
+<div *ngIf="allCrypto$ | async as crypto" >
+  <div >
+    <table>
+      <tr>
+        <div class="card-header">
+         Crypto
+        </div>
+
+      </tr>
+      <tr *ngFor=" let eachCrypto of crypto">
+        <td>
+          {{eachCrypto.id}}
+        </td>
+        <td>
+          {{eachCrypto.name}}
+        </td>
+        <td>
+          {{eachCrypto.description}}
+        </td>
+        <td>
+          {{eachCrypto.price}}
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
+
+</div>
